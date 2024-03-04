@@ -1,0 +1,46 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <div id="conten">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <form class="login" method="post" action="/create_new_user">
+                <fieldset>
+                    <legend>Add new Users:</legend>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" /><br /><br />
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname" /><br /><br />
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" /><br /><br />
+                    <input type="submit" value="Submit" />
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
+<script>
+    var ul1 = document.querySelectorAll('li');
+    ul1[0].classList.add('active');
+    ul1.forEach((element, index) => {
+        element.onmouseover = (e) => {
+            ul1[0].classList.remove('active');
+            e.target.classList.add('active');
+        };
+        element.onmouseout = (e) => {
+            e.target.classList.remove('active');
+            ul1[0].classList.add('active');
+        };
+    });
+</script>
